@@ -11,6 +11,8 @@ class ArticleList extends Component {
         toggleItem: PropTypes.func
     }
 
+    setContainerRef = containerRef => console.log(containerRef);
+
     render() {
         const { articles, openItemId, toggleItem } = this.props
         const articleElements = articles.map(article =>
@@ -22,7 +24,7 @@ class ArticleList extends Component {
                 </li>
             )
         return (
-            <ul>
+            <ul ref = {this.setContainerRef}>
                 {articleElements}
             </ul>
         )

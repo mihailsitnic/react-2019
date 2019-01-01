@@ -6,9 +6,13 @@ class App extends Component {
     render() {
         return (
           <div>
-              <ArticleList articles = {this.props.articles} />
+              <ArticleList articles = {this.props.articles} ref = {this.setListRef} />
           </div>
         );
+    }
+
+    setListRef = ref => {
+        console.log('ref === ', ref);
     }
 }
 
