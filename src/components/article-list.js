@@ -18,7 +18,7 @@ class ArticleList extends Component {
                     <Article 
                         article = {article} 
                         isOpen = {openItemId === article.id} 
-                        onButtonClick = {toggleItem(article.id)}/>
+                        onButtonClick = {toggleItem}/>
                 </li>
             )
         return (
