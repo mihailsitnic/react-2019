@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Article from './article'
-import accordion from '../decorators/accordion'
+import Article from '../article'
+import accordion from '../../decorators/accordion'
 
 class ArticleList extends Component {
     static propTypes = {
@@ -16,7 +16,7 @@ class ArticleList extends Component {
     render() {
         const { articles, openItemId, toggleItem } = this.props
         const articleElements = articles.map(article =>
-                <li key = {article.id}>
+                <li className = 'article__li' key = {article.id}>
                     <Article 
                         article = {article} 
                         isOpen = {openItemId === article.id} 
@@ -24,7 +24,7 @@ class ArticleList extends Component {
                 </li>
             )
         return (
-            <ul ref = {this.setContainerRef}>
+            <ul className = 'article__list' ref = {this.setContainerRef}>
                 {articleElements}
             </ul>
         )
