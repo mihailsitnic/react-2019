@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import CommentList from './comment-list'
 
 class Article extends PureComponent {
     render() {
-        console.log(1);
         const { isOpen, article, onButtonClick } = this.props
         return(
             <div>
@@ -21,6 +21,7 @@ function getBody(article) {
     return(
         <section>
             {article.text}
+            <CommentList comments = {article.comments || []} />
         </section>
     )
 }
